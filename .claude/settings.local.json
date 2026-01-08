@@ -1,7 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(powershell -ExecutionPolicy Bypass -File \"c:\\\\Users\\\\topem\\\\Desktop\\\\BS Repos and Extensions\\\\Claude AI VS Code extension mods\\\\fix-message-width.ps1\")"
-    ]
-  }
-}
