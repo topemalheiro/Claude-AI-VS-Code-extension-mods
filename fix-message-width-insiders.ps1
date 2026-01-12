@@ -10,8 +10,8 @@ foreach ($ext in $claudeExtensions) {
     $cssPath = Join-Path $ext.FullName 'webview\index.css'
     if (Test-Path $cssPath) {
         $css = Get-Content $cssPath -Raw
-        if ($css -match '\.Zi\{max-width:680px;') {
-            $newCss = $css -replace '\.Zi\{max-width:680px;', '.Zi{max-width:100%;'
+        if ($css -match '\.Qi\{max-width:680px;') {
+            $newCss = $css -replace '\.Qi\{max-width:680px;', '.Qi{max-width:100%;'
             Set-Content $cssPath -Value $newCss -NoNewline
             Write-Output "Fixed: $($ext.Name)"
         } else {
