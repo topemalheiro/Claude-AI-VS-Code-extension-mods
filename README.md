@@ -8,7 +8,6 @@ PowerShell scripts to fix annoyances and customize the Claude Code VS Code exten
 |--------|-------------|
 | `fix-message-width.ps1` | Full-width messages (VS Code stable) |
 | `fix-message-width-insiders.ps1` | Full-width messages (VS Code Insiders) |
-| `fix-windows-hide.ps1` | Hide Node.js popup windows on Windows |
 
 ## Fix 1: Full-Width Messages
 
@@ -20,16 +19,6 @@ powershell -ExecutionPolicy Bypass -File "fix-message-width.ps1"
 
 # For VS Code Insiders
 powershell -ExecutionPolicy Bypass -File "fix-message-width-insiders.ps1"
-```
-
-## Fix 2: Hide Node.js Popup Windows
-
-On Windows, the Claude Code extension spawns Node.js terminal windows that flash on screen when running commands. This is caused by a bug where `windowsHide` is only set to `true` when running under the Bun runtime, not Node.js.
-
-The `fix-windows-hide.ps1` script patches the extension to hide these windows on all Windows systems.
-
-```powershell
-powershell -ExecutionPolicy Bypass -File "fix-windows-hide.ps1"
 ```
 
 ## After Running Scripts
