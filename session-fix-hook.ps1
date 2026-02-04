@@ -7,9 +7,9 @@ if ($ext) {
     $cssPath = Join-Path $ext.FullName 'webview\index.css'
     if (Test-Path $cssPath) {
         $css = Get-Content $cssPath -Raw
-        if ($css -match '\.([a-zA-Z]{1,3})\{max-width:680px;') {
-            $className = $matches[1]
-            $newCss = $css -replace "\.$className\{max-width:680px;", ".$className{max-width:100%;"
+        # Simple: replace max-width:680px wherever it appears (works with any class name)
+        if ($css -match 'max-width:680px') {
+            $newCss = $css -replace 'max-width:680px', 'max-width:100%'
             Set-Content $cssPath -Value $newCss -NoNewline
         }
     }
